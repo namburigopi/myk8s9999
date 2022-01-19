@@ -6,13 +6,15 @@ spec:
    replicas: 3
    selector: 
      app: myjekins-pod
+     version: 2.7.1
    template:
      metadata:
        labels:
           app: myjekins-pod
+          version: 2.7.1
      spec:
         containers:
         - name: myjenkins-container   
-          image: jenkins:2.60.3
+          image: maha4iac/myjenkins
           ports:
           - containerPort: 8080  
