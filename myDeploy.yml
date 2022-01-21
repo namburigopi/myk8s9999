@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myjenkins-deploy
-  labels:
-    app: myjenkins
+ name: myjavaapp-deploy
+ labels:
+   app: myjavaapp
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
-      app: myjenkins
+        app: myjavaapp
   template:
     metadata:
-      labels:
-        app: myjenkins
+       labels:
+        app: myjavaapp
     spec:
       containers:
-      - name: myjenkins-container
-        image: maha4iac/myonlinebooking:2
+      - name: myjavaapp-container
+        image:  maha4iac/myjavaapp20jan22:2
         ports:
         - containerPort: 8080
